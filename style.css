@@ -12,7 +12,7 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(/images/myPhoto3.png);
+    background-image: url(/images/background.png);
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -54,4 +54,15 @@ nav ul li a::after{
 }
 nav ul li a:hover::after{
     width: 100%;
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h2{
+    font-size: 40px;
+    margin-top: 20px;
+}
+.header-text h2 span {
+color: #ff004f;
 }
