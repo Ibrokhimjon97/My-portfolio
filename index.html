@@ -26,5 +26,66 @@
             </div>
         </div>
     </div>
+<!-- Men haqimda bo`limi -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-column-1">
+                    <img src="/images/myPhoto2.png">
+                </div>
+                <div class="about-column-2">
+                    <h1 class="subtitle">Men haqimda</h1>
+                    <p class="menhaqimda">
+                        Salom. Mening ismim Ibrohimjon. Namangan viloyatidanman. Yoshim 25 da. Junior/middle FullStack dasturchiman. 
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                        <p class="tab-links" onclick="openTab('experiense')">Experiense</p>
+                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>FrontEnd</span><br>Web saytlar dizayni. HTML,CSS, JavaScript</li>
+                            <li><span>BackEnd</span><br>Web saytlar server qismini tayyorlash. PHP, Laravel, MySQL</li>
+                            <li><span>Photo/video Editor</span><br>Web saytlar uchun foto va videolar tayyorlash va taxrirlash</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experiense">
+                        <ul>
+                            <li><span>2022</span><br>Laravel</li>
+                            <li><span>2022</span><br>PHP</li>
+                            <li><span>2022</span><br>Arduino</li>
+                            <li><span>2022</span><br>JavaScript</li>
+                            <li><span>2022</span><br>CSS </li>
+                            <li><span>2022</span><br>HTML</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022</span><br>IT school PHP/Laravel mentori</li>
+                            <li><span>2022</span><br>Barkamol avlod bolalar maktabi Robobotehnika mentori</li>
+                            <li><span>2021</span><br>Freelancer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tablinks= document.getElementsByClassName("tab-links");
+        var tabcontents= document.getElementsByClassName("tab-contents");
+function openTab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link")
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab");
+}
+
+    </script>
 </body>
 </html>
