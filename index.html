@@ -13,17 +13,19 @@
         <div class="container">
             <nav>
                 <img src="/images/logo.png" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul id="sideMenu1" class="sideMenu1">
+                    <li><a href="#header">Bosh sahifa</a></li>
+                    <li><a href="#about">Men haqimda</a></li>
+                    <li><a href="#services">Xizmatlar</a></li>
+                    <li><a href="#portfolio">Mening loyihalarim</a></li>
+                    <li><a href="#contact">Bog'lanish</a></li>
+                    <i class="fas fa-times" onclick="closeMenu()"></i>
                 </ul>
+                <i class="fas fa-bars" onclick="openMenu()"></i>
             </nav>
             <div class="header-text">
-                <p>FullStack dasturchi</p>
-                <h2>Salom, meni ismim <span>Ibrohim</span>.<br> Men Namangandanman.<br>FullStack dasturchiman</h2>
+                
+                <h2><span>Ibrohimjon To`raboyev.</span> <br>FullStack dasturchi</h2>
             </div>
         </div>
     </div>
@@ -169,11 +171,12 @@
             </div>
         </div>
         <div class="contact-right">
-            <form>
+
+            <form name="submit-to-google-sheet">
                 <input type="text" name="Name" placeholder="Ismingizni yozing">
-                <input type="email" name="email" placeholder="Emailingizni yozing">
-                <textarea name="message"  rows="6" placeholder="Habaringizni buyerga yozing"></textarea>
-                <button type="submit" class="btn btn2">Yuborish</button>
+                <input type="email" name="Email" placeholder="Emailingizni yozing">
+                <textarea name="Message"  rows="6" placeholder="Habaringizni buyerga yozing"></textarea>
+                <button type="submit" name="submit" class="btn btn2">submit</button>
             </form>
         </div>
        </div> 
@@ -198,5 +201,31 @@ function openTab(tabname){
 }
 
     </script>
+
+    <script>
+        var sideMenu1=document.getElementById("sideMenu1");
+
+        function openMenu() {
+            sideMenu1.style.right = "0";
+        }
+
+        function closeMenu() {
+            sideMenu1.style.right = "-200px";
+        }
+
+
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz_bivZ9CSpwnHWvTiZukaaRskIyF0_7IpiLXYHvTabh9gok4yCzra6HLh3qMqfY_1zXA/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
 </html>

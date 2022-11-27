@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background: #080808;
     color: #fff;
@@ -312,4 +315,75 @@ form input, form textarea{
     background: #262626;
     font-weight: 300;
     margin-top: 20px;
+}
+
+nav .fas{
+    display: none;
+    
+}
+
+/* _______________responsive qilish__________________ bunda miminum 0 dan maximom 600 pxgacha*/
+
+
+@media only screen and (max-width:600px) {
+    
+    #header{
+        background-image: url(/images/myPhoto4.png);
+
+    }
+    .header-text{
+        margin-top: 100%;
+    }
+    .header-text h2{
+        font-size: 30px;
+        text-align: center;
+    }
+    nav .fas{
+        display: block;
+    }
+    nav ul{
+        background:#ff004f ;
+        position:fixed;
+        top: 0;
+        right:-200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .subtitle{
+        font-size: 40px;
+        text-align: center;
+    }
+    .menhaqimda{
+        text-align: justify;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .about-column-1, .about-column-2{
+        flex-basis: 100%;
+    }
+    .about-column-1{
+        margin-bottom: 20px;
+    }
+    .about-column-2{
+        font-size: 20px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
 }
