@@ -172,12 +172,13 @@
         </div>
         <div class="contact-right">
 
-            <form name="submit-to-google-sheet">
-                <input type="text" name="Name" placeholder="Ismingizni yozing">
-                <input type="email" name="Email" placeholder="Emailingizni yozing">
-                <textarea name="Message"  rows="6" placeholder="Habaringizni buyerga yozing"></textarea>
-                <button type="submit" name="submit" class="btn btn2">submit</button>
+            <form method="post">
+                <input type="text" id="name" placeholder="Ismingizni yozing" autocomplete="off">
+                <input type="email" id="email" placeholder="Emailingizni yozing" autocomplete="off">
+                <textarea name="message"  rows="6" placeholder="Habaringizni buyerga yozing" id="message"></textarea>
+                <button type="submit" id="btn" class="btn2">Yuborish</button>
             </form>
+
         </div>
        </div> 
     </div>
@@ -216,16 +217,33 @@ function openTab(tabname){
 
     </script>
 
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbz_bivZ9CSpwnHWvTiZukaaRskIyF0_7IpiLXYHvTabh9gok4yCzra6HLh3qMqfY_1zXA/exec'
-    const form = document.forms['submit-to-google-sheet']
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click', function(e){
+        e.preventDefault()
+
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subject = document.getElementById('message').value;
+        var message = document.getElementById('message').value;
+        var body = 'name:' +name + '<br/> email: ' + email + '<br/> message' + message;
+        
+        Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "abiturientlaruchun@gmail.com",
+    Password : "A44B0FA7E95A69681323FB58387B6F4D7449",
+    To : 'abiturientlaruchun@gmail.com',
+    From : email,
+    Subject : subject,
+    Body : body
+}).then(
+  message => alert('Habaringiz yuborildi!')
+);
     })
-  </script>
+
+</script>
 </body>
 </html>
