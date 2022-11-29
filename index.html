@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
     <link rel="stylesheet" href="/style.css">
     <script src="https://kit.fontawesome.com/dba6f948da.js" crossorigin="anonymous"></script>
 </head>
@@ -154,34 +157,61 @@
 
 </div>
 
-<div id="contact">
-    <div class="container">
-       <div class="row">
 
-        <div class="contact-left">
-            <h1 class="subtitle">Contact me</h1>
-            <p> <a href="mailto:Abiturientlaruchun@gmail.com"><i class="fa-regular fa-envelope"></i>Abiturientlaruchun@gmail.com</a> </p>
-            <p><a href="tel:+998912929262"><i class="fa-solid fa-phone"></i> +99891 292 92 62</a></p>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/ibrokhim_john97/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://t.me/Abrahamjohn97"><i class="fa-brands fa-telegram"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://github.com/Ibrokhimjon97"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-            </div>
-        </div>
-        <div class="contact-right">
 
-            <form method="post">
-                <input type="text" id="name" placeholder="Ismingizni yozing" autocomplete="off">
-                <input type="email" id="email" placeholder="Emailingizni yozing" autocomplete="off">
-                <textarea name="message"  rows="6" placeholder="Habaringizni buyerga yozing" id="message"></textarea>
-                <button type="submit" id="btn" class="btn2">Yuborish</button>
-            </form>
+            <div class="slider">
+                <!-- Slider main container -->
+                <div class="swiper">
+                <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                     <!-- Slides -->
+                         <div class="swiper-slide"><img src="/images/7tarih.JPG" alt=""></div>
+                         <div class="swiper-slide"><img src="/images/babm.JPG" alt=""></div>
+                         <div class="swiper-slide"><img src="/images/mtTib.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="/images/namangan2tk.uz.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="/images/pedagog.JPG" alt=""></div>
+                        <div class="swiper-slide"><img src="/images/sayohatgaUZ.JPG" alt=""></div>
+                    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+                    </div>
 
-        </div>
-       </div> 
-    </div>
+                     </div> 
+                </div>
+                <div id="contact">
+                    <div class="container">
+                       <div class="row">
+                
+                        <div class="contact-left">
+                            <h1 class="subtitle">Contact me</h1>
+                            <p> <a href="mailto:Abiturientlaruchun@gmail.com"><i class="fa-regular fa-envelope"></i>Abiturientlaruchun@gmail.com</a> </p>
+                            <p><a href="tel:+998912929262"><i class="fa-solid fa-phone"></i> +99891 292 92 62</a></p>
+                            <div class="social-icons">
+                                <a href="https://www.instagram.com/ibrokhim_john97/"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://t.me/Abrahamjohn97"><i class="fa-brands fa-telegram"></i></a>
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="https://github.com/Ibrokhimjon97"><i class="fa-brands fa-github"></i></a>
+                                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                        <div class="contact-right">
+                
+                            <form method="post">
+                                <input type="text" id="name" placeholder="Ismingizni yozing" autocomplete="off">
+                                <input type="email" id="email" placeholder="Emailingizni yozing" autocomplete="off">
+                                <textarea name="message"  rows="6" placeholder="Habaringizni buyerga yozing" id="message"></textarea>
+                                <button type="submit" id="btn" class="btn2">Yuborish</button>
+                            </form>
+                
+                        </div>
     <div class="copyright">
         <p>Barcha xuquqlar ximoyalangan. 2022</p>
     </div>
@@ -244,6 +274,29 @@ function openTab(tabname){
 );
     })
 
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});
 </script>
 </body>
 </html>
